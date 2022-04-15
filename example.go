@@ -21,7 +21,7 @@ var Cmd = &Z.Cmd{
 
 	Name:      `example`,
 	Summary:   `an example of Bonzai composite command tree`,
-	Version:   `v0.1.1`,
+	Version:   `v0.1.2`,
 	Copyright: `Copyright 2021 Robert S Muhlestein`,
 	License:   `Apache-2.0`,
 	Site:      `rwxrob.tv`,
@@ -90,11 +90,11 @@ var Cmd = &Z.Cmd{
 		your own Dynamic template.FuncMap (see text/template for more about
 		Go templates). Note that verbatim blocks will need to indented to work:
 
-		    {{ "{{ ls | indent 4 }}" }}
+		    {{ "{{ dir | indent 4 }}" }}
 
 		Produces a nice verbatim block:
 
-		{{ ls | indent 4 }}
+		{{ dir | indent 4 }}
 
 		Note this is different for every user and their specific system. The
 		ability to incorporate dynamic data into any help documentation is
