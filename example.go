@@ -8,10 +8,10 @@ import (
 	"log"
 	"text/template"
 
+	example "github.com/rwxrob/bonzai-example/pkg"
 	Z "github.com/rwxrob/bonzai/z"
 	compfile "github.com/rwxrob/compfile"
 	"github.com/rwxrob/conf"
-	example "github.com/rwxrob/example/pkg"
 	"github.com/rwxrob/help"
 	"github.com/rwxrob/vars"
 )
@@ -226,7 +226,7 @@ var pkgexample = &Z.Cmd{
 	// its own, even if it is tiny and just as a Name, Summary, and Call.
 	Params: []string{"bar", "baz"},
 
-	Call: func(_ *Z.Cmd, _ ...string) error {
+	Call: func(_ *Z.Cmd, args ...string) error {
 		example.Foo(args[1]) // calls high-level pkg library function
 		return nil
 	},
