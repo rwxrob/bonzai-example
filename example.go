@@ -21,7 +21,7 @@ var Cmd = &Z.Cmd{
 
 	Name:      `example`,
 	Summary:   `an example of Bonzai composite command tree`,
-	Version:   `v0.1.0`,
+	Version:   `v0.1.1`,
 	Copyright: `Copyright 2021 Robert S Muhlestein`,
 	License:   `Apache-2.0`,
 	Site:      `rwxrob.tv`,
@@ -44,7 +44,7 @@ var Cmd = &Z.Cmd{
 	// Add custom BonzaiMark template extensions (or overwrite existing ones).
 	Dynamic: template.FuncMap{
 		"uname": func(_ *Z.Cmd) string { return Z.Out("uname", "-a") },
-		"ls":    func() string { return Z.Out("ls", "-l", "-h") },
+		"dir":   func() string { return Z.Out("dir") },
 	},
 
 	Description: `
