@@ -15,7 +15,7 @@ Bonzai command tree.
 Standalone
 
 ```
-go install github.com/rwxrob/bonzai-example/bonzai-example@latest
+go install github.com/rwxrob/bonzai-example/cmd/bonzai-example@latest
 ```
 
 Composed
@@ -25,12 +25,12 @@ package z
 
 import (
 	Z "github.com/rwxrob/bonzai/z"
-	"github.com/rwxrob/bonzai-example"
+	example "github.com/rwxrob/bonzai-example"
 )
 
 var Cmd = &Z.Cmd{
 	Name:     `z`,
-	Commands: []*Z.Cmd{help.Cmd, bonzai-example.Cmd},
+	Commands: []*Z.Cmd{help.Cmd, example.Cmd},
 }
 ```
 
