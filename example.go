@@ -16,7 +16,8 @@ import (
 	"github.com/rwxrob/vars"
 )
 
-// main branch
+// Cmd provides a Bonzai branch command that can be composed into Bonzai
+// trees or used as a standalone with light wrapper (see cmd/).
 var Cmd = &Z.Cmd{
 
 	Name:      `example`,
