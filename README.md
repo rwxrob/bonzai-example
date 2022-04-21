@@ -30,7 +30,7 @@ import (
 
 var Cmd = &Z.Cmd{
 	Name:     `z`,
-	Commands: []*Z.Cmd{help.Cmd, example.Cmd},
+	Commands: []*Z.Cmd{help.Cmd, example.Cmd, example.Baz},
 }
 ```
 

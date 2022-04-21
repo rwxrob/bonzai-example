@@ -21,7 +21,7 @@ var Cmd = &Z.Cmd{
 
 	Name:      `example`,
 	Summary:   `an example of Bonzai composite command tree`,
-	Version:   `v0.2.1`,
+	Version:   `v0.3.0`,
 	Copyright: `Copyright 2021 Robert S Muhlestein`,
 	License:   `Apache-2.0`,
 	Site:      `rwxrob.tv`,
@@ -38,7 +38,7 @@ var Cmd = &Z.Cmd{
 		help.Cmd, conf.Cmd, vars.Cmd,
 
 		// local commands (in this module)
-		Bar, own, pkgexample,
+		Bar, own, pkgexample, Baz,
 	},
 
 	// Add custom BonzaiMark template extensions (or overwrite existing ones).
