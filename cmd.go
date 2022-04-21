@@ -21,7 +21,7 @@ var Cmd = &Z.Cmd{
 
 	Name:      `example`,
 	Summary:   `an example of Bonzai composite command tree`,
-	Version:   `v0.2.0`,
+	Version:   `v0.2.1`,
 	Copyright: `Copyright 2021 Robert S Muhlestein`,
 	License:   `Apache-2.0`,
 	Site:      `rwxrob.tv`,
