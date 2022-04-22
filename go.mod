@@ -3,12 +3,12 @@ module github.com/rwxrob/bonzai-example
 go 1.18
 
 require (
-	github.com/rwxrob/bonzai v0.11.1
-	github.com/rwxrob/compfile v0.1.7
-	github.com/rwxrob/conf v0.6.1
+	github.com/rwxrob/bonzai v0.12.1
+	github.com/rwxrob/compfile v0.1.9
+	github.com/rwxrob/conf v0.6.2
 	github.com/rwxrob/config v0.4.3
-	github.com/rwxrob/help v0.3.8
-	github.com/rwxrob/vars v0.3.0
+	github.com/rwxrob/help v0.4.1
+	github.com/rwxrob/vars v0.3.1
 )
 
 require (
@@ -22,7 +22,7 @@ require (
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mikefarah/yq/v4 v4.24.5 // indirect
 	github.com/rogpeppe/go-internal v1.8.1 // indirect
-	github.com/rwxrob/compcmd v0.1.6 // indirect
+	github.com/rwxrob/compcmd v0.2.1 // indirect
 	github.com/rwxrob/fn v0.3.3 // indirect
 	github.com/rwxrob/fs v0.5.1 // indirect
 	github.com/rwxrob/scan v0.6.1 // indirect
@@ -33,8 +33,8 @@ require (
 	github.com/timtadh/data-structures v0.5.3 // indirect
 	github.com/timtadh/lexmachine v0.2.2 // indirect
 	golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4 // indirect
-	golang.org/x/net v0.0.0-20220420153159-1850ba15e1be // indirect
-	golang.org/x/sys v0.0.0-20220412211240-33da011f77ad // indirect
+	golang.org/x/net v0.0.0-20220421235706-1d1ef9303861 // indirect
+	golang.org/x/sys v0.0.0-20220422013727-9388b58f7150 // indirect
 	golang.org/x/term v0.0.0-20220411215600-e5f449aeb171 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/xerrors v0.0.0-20220411194840-2f41105eb62f // indirect
