@@ -3,12 +3,12 @@ module github.com/rwxrob/bonzai-example
 go 1.18
 
 require (
-	github.com/rwxrob/bonzai v0.12.1
-	github.com/rwxrob/compfile v0.1.9
-	github.com/rwxrob/conf v0.6.2
+	github.com/rwxrob/bonzai v0.12.2
+	github.com/rwxrob/compfile v0.1.10
+	github.com/rwxrob/conf v0.6.3
 	github.com/rwxrob/config v0.4.3
-	github.com/rwxrob/help v0.4.1
-	github.com/rwxrob/vars v0.3.1
+	github.com/rwxrob/help v0.4.2
+	github.com/rwxrob/vars v0.3.2
 )
 
 require (
@@ -22,7 +22,7 @@ require (
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mikefarah/yq/v4 v4.24.5 // indirect
 	github.com/rogpeppe/go-internal v1.8.1 // indirect
-	github.com/rwxrob/compcmd v0.2.1 // indirect
+	github.com/rwxrob/compcmd v0.2.2 // indirect
 	github.com/rwxrob/fn v0.3.3 // indirect
 	github.com/rwxrob/fs v0.5.1 // indirect
 	github.com/rwxrob/scan v0.6.1 // indirect
