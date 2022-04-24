@@ -10,7 +10,7 @@ import (
 )
 
 // private leaf
-var own = &Z.Cmd{
+var ownCmd = &Z.Cmd{
 	Name: `own`,
 	Call: func(caller *Z.Cmd, none ...string) error {
 		log.Print("I'm in my own file.")

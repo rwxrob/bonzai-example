@@ -20,7 +20,7 @@ import (
 // install github.com/rwxrob/bonzai-example@latest" to ensure you have
 // no errors with your versions, caching server, or dependencies.
 
-func TestBar(t *testing.T) {
+func TestBarCmd(t *testing.T) {
 
 	// capture the output
 	buf := new(bytes.Buffer)
@@ -29,7 +29,7 @@ func TestBar(t *testing.T) {
 	defer log.SetFlags(log.Flags())
 	defer log.SetOutput(os.Stderr)
 
-	Bar.Call(nil)
+	BarCmd.Call(nil)
 
 	t.Log(buf)
 	if buf.String() != "would bar stuff\n" {

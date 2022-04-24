@@ -15,13 +15,25 @@ import (
 	"github.com/rwxrob/vars"
 )
 
+// Most Cmds that make use of the conf and vars branches will want to
+// call SoftInit in order to create the persistence layers or whatever
+// else is needed to initialize their use. This cannot be done
+// automatically from these imported modules because Cmd authors may
+// with to change the default values before calling SoftInit and
+// committing them.
+
+func init() {
+	Z.Conf.SoftInit()
+	Z.Vars.SoftInit()
+}
+
 // Cmd provides a Bonzai branch command that can be composed into Bonzai
 // trees or used as a standalone with light wrapper (see cmd/).
 var Cmd = &Z.Cmd{
 
 	Name:      `example`,
 	Summary:   `an example of Bonzai composite command tree`,
-	Version:   `v0.3.2`,
+	Version:   `v0.4.0`,
 	Copyright: `Copyright 2021 Robert S Muhlestein`,
 	License:   `Apache-2.0`,
 	Site:      `rwxrob.tv`,
@@ -38,7 +50,7 @@ var Cmd = &Z.Cmd{
 		help.Cmd, conf.Cmd, vars.Cmd,
 
 		// local commands (in this module)
-		Bar, own, pkgexample, Baz,
+		BarCmd, ownCmd, pkgexampleCmd, BazCmd,
 	},
 
 	// Add custom BonzaiMark template extensions (or overwrite existing ones).
@@ -152,7 +164,7 @@ var Cmd = &Z.Cmd{
 // command.
 
 // exported branch
-var Bar = &Z.Cmd{
+var BarCmd = &Z.Cmd{
 	Name: `bar`,
 
 	// Aliases are not commands but will be replaced by their target names
@@ -164,7 +176,7 @@ var Bar = &Z.Cmd{
 	// Commands are the main way to compose other commands into your
 	// branch. When in doubt, add a command, even if it is in the same
 	// file.
-	Commands: []*Z.Cmd{help.Cmd, file},
+	Commands: []*Z.Cmd{help.Cmd, fileCmd},
 
 	// Call first-class functions can be highly detailed, refer to an
 	// existing function someplace else, or can call high-level package
@@ -189,7 +201,7 @@ var Bar = &Z.Cmd{
 // FROM SCRATCH containers that use a Bonzai tree as the core binary).
 
 // private leaf
-var file = &Z.Cmd{
+var fileCmd = &Z.Cmd{
 	Name:     `file`,
 	Commands: []*Z.Cmd{help.Cmd},
 	Comp:     compfile.New(),
@@ -213,7 +225,7 @@ var file = &Z.Cmd{
 // * As a high-level library unrelated to Bonzai at all (see "pkg")
 
 // private leaf
-var pkgexample = &Z.Cmd{
+var pkgexampleCmd = &Z.Cmd{
 	Name: `pkgexample`,
 
 	// Several argument checks are available to keep your Call functions

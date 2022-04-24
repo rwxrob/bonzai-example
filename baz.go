@@ -10,7 +10,7 @@ import (
 )
 
 // exported leaf
-var Baz = &Z.Cmd{
+var BazCmd = &Z.Cmd{
 	Name: `baz`,
 	Call: func(caller *Z.Cmd, none ...string) error {
 		log.Print("Baz, suncreen song")
