@@ -59,6 +59,12 @@ var Cmd = &Z.Cmd{
 		"dir":   func() string { return Z.Out("dir") },
 	},
 
+	// WARNING: The Description will be dedented using the exact
+	// runes from the beginning of the first line to the first
+	// non-whitespace character. This means that mixing spaces and tabs in
+	// your indentation will created unwanted truncation. Make sure each
+	// line has the same indentation exactly.
+
 	Description: `
 		The **{{.Name}}** command branch is a well-documented example to get
 		you started.  You can start the description here and wrap it to look
