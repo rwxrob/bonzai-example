@@ -33,7 +33,7 @@ var Cmd = &Z.Cmd{
 
 	Name:      `example`,
 	Summary:   `an example of Bonzai composite command tree`,
-	Version:   `v0.4.1`,
+	Version:   `v0.4.2`,
 	Copyright: `Copyright 2021 Robert S Muhlestein`,
 	License:   `Apache-2.0`,
 	Site:      `rwxrob.tv`,
@@ -66,13 +66,13 @@ var Cmd = &Z.Cmd{
 	// line has the same indentation exactly.
 
 	Description: `
-		The **{{.Name}}** command branch is a well-documented example to get
-		you started.  You can start the description here and wrap it to look
-		nice and it will just work.  Descriptions are written in BonzaiMark,
+		The {{aka}} command is a well-documented example to get you started.
+		You can start the description here and wrap it to look nice and it
+		will just work.  Descriptions are written in BonzaiMark,
 		a simplified combination of CommonMark, "go doc", and text/template
 		that uses the Cmd itself as a data source and has a rich set of
-		builtin template functions ({{pre "pre"}}, {{pre "exename"}}, {{pre
-		"indent"}}, etc.). There are four block types and four span types in
+		builtin template functions ({{pre "pre"}}, {{pre "exename"}},
+		{{pre "indent"}}, etc.). There are four block types and four span types in
 		BonzaiMark:
 
 		Spans
@@ -101,7 +101,7 @@ var Cmd = &Z.Cmd{
 		Templates
 
 		Anything from Cmd that fulfills the requirement to be included in
-		a Go text/template may be used. This includes {{ "{{ .Name }}" }}
+		a Go text/template may be used. This includes {{ "{{ cmd .Name }}" }}
 		and the rest. A number of builtin template functions have also been
 		added (such as {{ "indent" }}) which can receive piped input. You
 		can add your own functions (or overwrite existing ones) by adding
@@ -110,22 +110,24 @@ var Cmd = &Z.Cmd{
 
 		    {{ "{{ dir | indent 4 }}" }}
 
+
 		Produces a nice verbatim block:
 
-		{{ dir | indent 4 }}
+		    {{ dir | indent 4 }}
+
 
 		Note this is different for every user and their specific system. The
 		ability to incorporate dynamic data into any help documentation is
 		a game-changer not only for creating very consumable tools, but
 		creating intelligent, interactive training and education materials
-	 	as well.
+		as well.
 
 		Templates Within Templates
 
 		Sometimes you will need more text than can easily fit within
 		a single action. (Actions may not span new lines.) For such things
 		defining a template with that text is required and they you can
-		include it with the {{pre "template"}} tag.
+		include it with the {{pre "template" }} tag.
 
 		    {{define "long" -}}
 		    Here is something
@@ -133,7 +135,14 @@ var Cmd = &Z.Cmd{
 		    lines that would otherwise be too long for a single action.
 		    {{- end}}
 
-		    The {{ "**{{.Name}}**" }} branch is for everything to help with
+		Something
+		`,
+	/*
+
+		Something
+
+
+		    The {{ "{{cmd .Name}}" }} branch is for everything to help with
 		    development, use, and discovery of Bonzai branches and leaf
 		    commands ({{ "{{- template \"long\" \"\" | pre -}}" }}).
 
@@ -145,7 +154,7 @@ var Cmd = &Z.Cmd{
 		Bonzai branch commands can be considered portable, dynamic web
 		servers (once the planned support for embedded fs assets is
 		added).`,
-
+	*/
 	Other: []Z.Section{
 		{`Custom Sections`, `
 			Additional sections can be added to the Other field.
